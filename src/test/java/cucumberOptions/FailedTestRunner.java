@@ -5,9 +5,12 @@ import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
     @CucumberOptions(features ="@target/failed_scenarios.txt",
-            tags="@kart",  glue="stepDefinitionsKart",  monochrome = true, plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json",
+            tags="@kart",
+            glue="stepDefinitionsKart",
+            monochrome = true,
+            plugin = {"pretty", "html:target/cucumber.html", "json:target/cucumber.json",
             "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
-    }
+         }
     )  // tags="not @Regression"
     public class FailedTestRunner extends AbstractTestNGCucumberTests {
         @Override

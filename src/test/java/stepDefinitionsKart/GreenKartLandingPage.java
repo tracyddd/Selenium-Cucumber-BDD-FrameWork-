@@ -30,7 +30,7 @@ public class GreenKartLandingPage {
         driver.manage().window().maximize();
     }
 
-    @ When("user searched with Shortname {string} and extracted actual name of product")
+    @ When("User searched with Shortname {string} and extracted actual name of product")
     public void user_searched_with_shortname_and_extracted_actual_name_of_product(String shortName)throws InterruptedException {
         LandingPage landingPage = new LandingPage(testContextSetup.driver); // Pass the existing driver
         landingPage.searchItem(shortName);

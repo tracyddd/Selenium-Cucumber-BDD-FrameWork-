@@ -3,6 +3,7 @@ package stepDefinitions;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 import utils.TestContextSetup;
 
 public class hooks {
@@ -16,25 +17,25 @@ public class hooks {
     @Before("@NetBanking")  //  @Before only run for NetBanking annotations
     public void netBankingSetup()
     {
-        System.out.println("hooks: Setup the entries in NetBanking database");
+        Reporter.log("hooks: Setup the entries in NetBanking database");
     }
 
     @Before("@NetBanking")
     public void mortgageSetup()
     {
-        System.out.println("hooks: Setup the entries in Mortgage database");
+        Reporter.log("hooks: Setup the entries in Mortgage database");
     }
 
     @Before("@new")
     public void newSetup()
     {
-        System.out.println("hooks - new: Setup the entries in new test database");
+        Reporter.log("hooks - new: Setup the entries in new test database");
     }
 
     @After
     public void tearDown(){
         driver.quit();
-        System.out.println("hooks - all : Clear the entries for all databases");
+        Reporter.log("hooks - all : Clear the entries for all databases");
     }
 }
 

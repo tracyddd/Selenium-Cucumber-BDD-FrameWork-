@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Reporter;
 
 public class LandingPage {
     private final WebDriver driver;
@@ -13,18 +14,18 @@ public class LandingPage {
    By productName=By.cssSelector("h4.product-name");
 
     public void searchItem(String name){
-        System.out.println("searching :"+name);
+        Reporter.log("searching :"+name);
         driver.findElement(search).sendKeys(name);
     }
 
     public void getSearchText(){
        String getSearchTextResult= driver.findElement(search).getText();
-        System.out.println("getSearchTextResult is: "+getSearchTextResult);
+        Reporter.log("getSearchTextResult is: "+getSearchTextResult);
     }
 
     public String getProductName() {
         String productNameText = driver.findElement(productName).getText().split("-")[0].trim();
-        System.out.println("productName: " + productNameText + " is extracted from Home page");
+        Reporter.log("productName: " + productNameText + " is extracted from Home page");
         return productNameText;
     }
 }

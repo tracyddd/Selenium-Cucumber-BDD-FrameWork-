@@ -9,6 +9,7 @@ import org.testng.Assert;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.testng.Reporter;
 import utils.TestContextSetup;
 
 public class GreenKartOfferPage {
@@ -28,23 +29,23 @@ public class GreenKartOfferPage {
     public void user_searched_for_shortname_in_offers_page(String shortName) throws InterruptedException {
         //offer page->enter->grab text
         driver.findElement(By.linkText("Top Deals")).click();
-        //System.out.println("Top deals hyperlink is clicked");
+        Reporter.log("Top deals hyperlink is clicked");
         Set<String> s1=driver.getWindowHandles();
         Iterator<String> i1=s1.iterator();
         String parentWindows=i1.next();
         String childWindow=i1.next();
         driver.switchTo().window(childWindow);
         driver.findElement(By.xpath("//input[@type='search']")).sendKeys(shortName);
-        System.out.println("Input shortName: "+shortName);
+        Reporter.log("Input shortName: "+shortName);
         Thread.sleep(3000);
         offerPageProductName=driver.findElement(By.cssSelector("tr td:nth-child(1)")).getText();
 
     }
 
-    @And("validate product name in offers page matches with Landing page")
+    @And("Validate product name in offers page matches with Landing page")
     public void validate_product_name_in_offers_page_matches_with_landing_page() {
-        System.out.println("offerPageProductName is: "+offerPageProductName);
-        System.out.println(productName);
+        Reporter.log("offerPageProductName is: "+offerPageProductName);
+        Reporter.log(productName);
        Assert.assertEquals(offerPageProductName, productName);
     }
 }
