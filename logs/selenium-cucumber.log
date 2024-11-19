@@ -1,0 +1,6 @@
+2024-11-17 00:13:17 [main] INFO  stepDefinitionsKart.Hooks - Log4j is initialized in Hooks
+2024-11-17 00:13:17 [main] INFO  stepDefinitionsKart.Hooks.Log - This is a test log message from Hooks to confirm Log4j is working.
+2024-11-17 00:13:17 [main] INFO  stepDefinitionsKart.Hooks.ReporterLogger - hooks ReporterLogger - all : Clear the entries for all databases
+2024-11-17 00:20:47 [main] INFO  stepDefinitionsKart.Hooks - Log4j is initialized in Hooks
+2024-11-17 00:20:47 [main] INFO  stepDefinitionsKart.Hooks.Log - This is a test log message from Hooks to confirm Log4j is working.
+2024-11-17 00:20:48 [main] INFO  stepDefinitionsKart.Hooks.ReporterLogger - hooks ReporterLogger - all : Clear the entries for all databases

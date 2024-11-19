@@ -5,6 +5,8 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pageObjects.LandingPage;
 import utils.ConfigReader;
+import utils.Log;
+import utils.ReporterLogger;
 import utils.TestContextSetup;
 
 public class GreenKartLandingPage {

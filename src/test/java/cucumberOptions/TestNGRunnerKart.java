@@ -4,9 +4,9 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 import io.cucumber.testng.CucumberOptions;
 import org.testng.annotations.DataProvider;
 
-@CucumberOptions(features ="src/test/java/featuresKart",
+@CucumberOptions(features ={"src/test/java/featuresKart"},
        // tags="@kart",  // tags="not @Regression"
-        glue="stepDefinitionsKart",
+        glue= {"stepDefinitionsKart"},
         monochrome = true,
         plugin = {"pretty", "html:target/cucumber-kart.html",
                 "json:target/cucumber-kart.json",

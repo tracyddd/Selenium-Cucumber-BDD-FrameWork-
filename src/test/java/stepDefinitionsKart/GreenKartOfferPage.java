@@ -5,12 +5,12 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.Reporter;
+import utils.Log;
+import utils.TestContextSetup;
 
 import java.util.Iterator;
 import java.util.Set;
-
-import org.testng.Reporter;
-import utils.TestContextSetup;
 
 public class GreenKartOfferPage {
     private final TestContextSetup testContextSetup;
@@ -39,13 +39,15 @@ public class GreenKartOfferPage {
         Reporter.log("Input shortName: "+shortName);
         Thread.sleep(3000);
         offerPageProductName=driver.findElement(By.cssSelector("tr td:nth-child(1)")).getText();
-
+        Reporter.log("Reporter.log is showing here");
+        assert true;
     }
 
     @And("Validate product name in offers page matches with Landing page")
     public void validate_product_name_in_offers_page_matches_with_landing_page() {
         Reporter.log("offerPageProductName is: "+offerPageProductName);
         Reporter.log(productName);
+        Log.info("Log: Validate product name in offers page matches with Landing page");
        Assert.assertEquals(offerPageProductName, productName);
     }
 }

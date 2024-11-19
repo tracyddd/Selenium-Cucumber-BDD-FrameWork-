@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--<suite name="Parameters TestSuite">
+    <test name="Test 1">
+        <parameter name="browser" value="firefox"></parameter>
+        <parameter name="platform" value="mac"></parameter>
+        <parameter name="response" value="201,200"></parameter>
+        <classes>
+            <class name="org.example.App"></class>
+        </classes>
+    </test>
+</suite>
+-->
+
+<suite name="Parallel TestSuite" parallel="tests" thread-count="2">
+    <test name="Firefox Test">
+        <parameter name="browser" value="firefox"></parameter>
+        <classes>
+            <class name="org.example.App"></class>
+        </classes>
+    </test>
+    <test name="Chrome Test">
+        <parameter name="browser" value="chrome"></parameter>
+        <classes>
+            <class name="org.example.App"></class>
+        </classes>
+    </test>
+</suite>
+
