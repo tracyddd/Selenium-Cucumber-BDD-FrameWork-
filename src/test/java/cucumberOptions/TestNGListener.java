@@ -12,6 +12,6 @@ import io.cucumber.testng.AbstractTestNGCucumberTests;
 
     }
 )
-public class TestNGTestClass extends AbstractTestNGCucumberTests
+public class TestNGListener extends AbstractTestNGCucumberTests
 {
 }

@@ -8,7 +8,8 @@ public class ConfigReader {
     private Properties properties;
 
     public ConfigReader() {
-        String filePath = "src/test/resources/global.properties";  // 文件路径可以根据实际情况修改
+        // file path may vary
+        String filePath = "src/test/resources/global.properties";
         try (FileInputStream fis = new FileInputStream(filePath)) {
             properties = new Properties();
             properties.load(fis);

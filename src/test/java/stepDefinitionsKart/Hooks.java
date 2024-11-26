@@ -5,14 +5,13 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.commons.io.FileUtils;
-import org.example.LoggingDemo;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import utils.TestContextSetup;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 
@@ -72,7 +71,7 @@ public class Log {
           //  tackTakeScreenshot when step is failed
         if (scenario.isFailed()) {
             //screenshot
-    File sourcePath=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+            File sourcePath=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
             byte[] fileContent=FileUtils.readFileToByteArray(sourcePath);
             scenario.attach(fileContent,"image/jpg", "image");
         }
